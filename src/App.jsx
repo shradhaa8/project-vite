@@ -12,6 +12,10 @@ import {
 import Contact from './components/Contact';
 import About from './components/About';
 import Home from './components/Home';
+// import Classes from './components/Classes';
+import Func from './components/Func';
+import Counter from './components/Counter';
+import Details from './components/Details';
 
 
 function App() {
@@ -61,13 +65,14 @@ function App() {
        
       </div> */}
       <Alert alert={alert} showAlert={showAlert}/>
-
+        <Func/>
+        <Counter/>
       <Routes>
         <>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-            
+        <Route path="/details/:id" element={<Details />} />    
       </>
         </Routes>
       </Router>
