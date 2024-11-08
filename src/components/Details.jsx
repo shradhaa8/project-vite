@@ -4,7 +4,8 @@ const Details = () => {
     const {id} = useParams();
   return (
     <div>
-    <h4>Client: {id}</h4>
+    <h2>User Details</h2>
+    <h4>User: {id}</h4>
     </div>
   )
 }
