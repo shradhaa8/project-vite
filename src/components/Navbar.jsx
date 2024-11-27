@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { FaShoppingCart } from "react-icons/fa";
+import productContext from '../context/productContext';
 
 const Navbar = (props) => {
+  const context = useContext(productContext)
+  const {state:{cart}} = context
+
   return (
     <div>
       <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
@@ -31,6 +36,29 @@ const Navbar = (props) => {
         </li>
         <li className="nav-item">
         <Link className="nav-link active" aria-current="page" to="/contact">Contact Us</Link> 
+        </li>
+        <li className="nav-item">
+        <Link className="nav-link active" aria-current="page" to="/editmodal">Modal</Link> 
+        </li>
+        <li className="nav-item">
+        <Link className="nav-link active" aria-current="page" to="/signup">Sign Up</Link> 
+        </li>
+        <li className="nav-item">
+        <Link className="nav-link active" aria-current="page" to="/login">LogIN</Link> 
+        </li>
+
+        <li className="nav-item">
+        <Link className="nav-link active" aria-current="page" to="/user">User</Link> 
+        </li>
+        <li className="nav-item">
+        <Link className="nav-link position-relative" to="./cartitem"><FaShoppingCart />
+       
+  <span className="position-absolute top-5 start-100 translate-middle badge  bg-danger">
+    {cart.length}
+    <span className="visually-hidden">unread messages</span>
+  </span>
+
+</Link> 
         </li>
       </ul>
       <form className="d-flex">

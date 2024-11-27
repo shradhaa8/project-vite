@@ -16,6 +16,13 @@ import Home from './components/Home';
 import Func from './components/Func';
 import Counter from './components/Counter';
 import Details from './components/Details';
+import ProductState from './context/ProductState';
+import Signup from './components/Signup';
+import Login from './components/Login';
+import UserList from './components/UserList';
+import User from './components/User';
+import CartItems from './components/CartItems';
+import Openeditmodal from './components/Openeditmodal';
 
 
 function App() {
@@ -55,8 +62,9 @@ function App() {
 
   return (
     <>
+    <ProductState>
       <Router>
-     <Navbar title="this is navbar" mode={mode} text={text} color={color} toggleMode={toggleMode}/>
+     <Navbar title="GADGETCRAZE" mode={mode} text={text} color={color} toggleMode={toggleMode}/>
       {/* <h1>Vite + React</h1>
       <div className="card">
         <button onClick={() => setColor("red")}>
@@ -65,17 +73,24 @@ function App() {
        
       </div> */}
       <Alert alert={alert} showAlert={showAlert}/>
-        <Func/>
-        <Counter/>
+        {/* <Func/>
+        <Counter/> */}
       <Routes>
         <>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/details/:id" element={<Details />} />    
-      </>
+        <Route path="/details/:id" element={<Details />} />   
+        <Route path="/signup" element={<Signup />} />   
+        <Route path="/login" element={<Login />} /> 
+        <Route path="/editmodal" element={<Openeditmodal />} /> 
+        <Route path="/cartitem" element={<CartItems />} />  
+        <Route path="/user/:userId/:userName" element={<User />} />
+            <Route path="/user" element={<UserList />} />
+             </>
         </Routes>
       </Router>
+      </ProductState>
 
     </>
   )

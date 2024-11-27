@@ -1,4 +1,36 @@
-
+.news-header{
+  text-align: center;
+}
+.btn-primary{
+  background-color: transparent;
+  border: none;
+}
+.cart-page{
+  display: flex;
+  
+}
+.productContainer-cart{
+  width: 70%;
+}
+.filter-summary{
+  width: 20%;
+  background: black;
+  color: beige;
+  padding: 40px;
+  height: 100vh;
+}
+.three-dots{
+  display: flex;
+  justify-content: space-between;
+}
+.cart-img{
+  width: 50px;
+  height: 50px;
+}
+.our-product-title{
+  padding: 30px;
+  text-align: center;
+}
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
