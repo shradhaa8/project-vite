@@ -8,7 +8,7 @@ const router = express.Router()
 require("dotenv").config
 
 const JWT_SECRET ="process.env.SECRET"
-console.log(JWT_SECRET);
+
 
 
 //Creating a user
