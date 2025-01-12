@@ -3,6 +3,7 @@ import { useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import Alert from './components/Alert'
+import Footer from './components/Footer'
 import {
   BrowserRouter as Router,
   Routes,
@@ -22,8 +23,8 @@ import Login from './components/Login';
 import UserList from './components/UserList';
 import User from './components/User';
 import CartItems from './components/CartItems';
-import Openeditmodal from './components/Openeditmodal';
-
+import Addproduct from './components/AddProduct';
+import Profile from './components/Profile'
 
 function App() {
   // const [color, setColor] = useState("blue")
@@ -78,20 +79,22 @@ function App() {
       <Routes>
         <>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/profile" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/details/:id" element={<Details />} />   
         <Route path="/signup" element={<Signup />} />   
         <Route path="/login" element={<Login />} /> 
-        <Route path="/editmodal" element={<Openeditmodal />} /> 
+        <Route path="/addproduct" element={<Addproduct />} /> 
+        <Route path="/pro" element={<Profile />} />
         <Route path="/cartitem" element={<CartItems />} />  
         <Route path="/user/:userId/:userName" element={<User />} />
             <Route path="/user" element={<UserList />} />
              </>
         </Routes>
       </Router>
+      
       </ProductState>
-
+          <Footer/>
     </>
   )
 }

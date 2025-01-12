@@ -9,8 +9,6 @@ require("dotenv").config
 
 const JWT_SECRET ="process.env.SECRET"
 
-
-
 //Creating a user
 
 router.post('/createuser',[

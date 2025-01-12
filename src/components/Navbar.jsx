@@ -1,11 +1,28 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaShoppingCart } from "react-icons/fa";
 import productContext from '../context/productContext';
 
+
 const Navbar = (props) => {
   const context = useContext(productContext)
   const {state:{cart}} = context
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setIsAuthenticated(false);
+  };
+  
 
   return (
     <div>
@@ -21,7 +38,7 @@ const Navbar = (props) => {
           <Link className="nav-link active" aria-current="page" to="/">Home</Link> 
         </li>
         <li className="nav-item">
-        <Link className="nav-link active" aria-current="page" to="/about">About Us</Link> 
+        <Link className="nav-link active" aria-current="page" to="/pro">Profile</Link> 
         </li>
         <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -40,13 +57,23 @@ const Navbar = (props) => {
         <li className="nav-item">
         <Link className="nav-link active" aria-current="page" to="/editmodal">Modal</Link> 
         </li>
-        <li className="nav-item">
-        <Link className="nav-link active" aria-current="page" to="/signup">Sign Up</Link> 
-        </li>
-        <li className="nav-item">
-        <Link className="nav-link active" aria-current="page" to="/login">LogIN</Link> 
-        </li>
-
+        {isAuthenticated ? (
+          <li>
+          <Link className="nav-link active" aria-current="page" onClick={handleLogout}>Logout</Link>
+          </li>
+          
+        
+          ) : (
+          <>
+          <li className="nav-item">
+          <Link className="nav-link active" aria-current="page" to="/signup">Sign Up</Link>
+          </li>
+          <li className="nav-item">
+          <Link className="nav-link active" aria-current="page" to="/login">Log In</Link>
+          </li>
+          </>
+        )}
+        
         <li className="nav-item">
         <Link className="nav-link active" aria-current="page" to="/user">User</Link> 
         </li>

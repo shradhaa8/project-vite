@@ -3,6 +3,7 @@ import image from "../assets/images/image.jpg"
 import iphone from "../assets/images/iphone.jpg"
 import Banner from './Banner'
 import About from './About'
+import Footer from './Footer'
 
 
 const Home = () => {
@@ -82,6 +83,7 @@ return(
   <div>
     <Banner/>
     <About/>
+    
   </div>
 )
 
