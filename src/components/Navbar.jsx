@@ -40,22 +40,9 @@ const Navbar = (props) => {
         <li className="nav-item">
         <Link className="nav-link active" aria-current="page" to="/pro">Profile</Link> 
         </li>
-        <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a className="dropdown-item" href="#">Action</a></li>
-            <li><a className="dropdown-item" href="#">Another action</a></li>
-            <li><hr className="dropdown-divider"/></li>
-            <li><a className="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
+        
         <li className="nav-item">
         <Link className="nav-link active" aria-current="page" to="/contact">Contact Us</Link> 
-        </li>
-        <li className="nav-item">
-        <Link className="nav-link active" aria-current="page" to="/editmodal">Modal</Link> 
         </li>
         {isAuthenticated ? (
           <li>
@@ -73,10 +60,6 @@ const Navbar = (props) => {
           </li>
           </>
         )}
-        
-        <li className="nav-item">
-        <Link className="nav-link active" aria-current="page" to="/user">User</Link> 
-        </li>
         <li className="nav-item">
         <Link className="nav-link position-relative" to="./cartitem"><FaShoppingCart />
        
