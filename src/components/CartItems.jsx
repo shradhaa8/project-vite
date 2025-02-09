@@ -7,7 +7,7 @@ const CartItems = () => {
     const context = useContext(productContext)
   const {state:{cart}, dispatch} = context
   const Total= cart.reduce((acc, curr)=> acc+ curr.price * curr.qty, 0)
-  console.log("cartPrice=",Total);
+  console.log("cartPrice= ",Total);
   
   return (
     <div className='container cart-page'>
@@ -64,7 +64,7 @@ const CartItems = () => {
 
         </div>
       <div className='filter-summary'>
-        <div className='title'> total items:{cart.length}</div>
+        <div className='title'> Total Items: {cart.length}</div>
         <h4>Total: {Total}</h4>
         <button className='btn btn-primary'> Proceed to checkout </button>
       </div>

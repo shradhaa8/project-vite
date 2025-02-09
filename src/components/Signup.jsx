@@ -66,7 +66,7 @@ const Signup = () => {
                                 <input type="password"name='password' value={credential.password} onChange={onChange} className="form-control" id="exampleInputPassword1" />
                             </div>
                             <div className="mb-3">
-                                <label htmlFor="exampleInputPassword1" className="form-label"> Conform Password</label>
+                                <label htmlFor="exampleInputPassword1" className="form-label"> Confirm Password</label>
                                 <input type="password"name='cpassword' value={credential.cpassword} onChange={onChange} className="form-control" id="exampleInputPassword1" />
                             </div>
                             
