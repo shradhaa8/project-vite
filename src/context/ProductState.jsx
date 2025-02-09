@@ -3,10 +3,7 @@ import ProductContext from './productContext'
 import { cartReducer } from './Reducers'
 
 const ProductState = (props) => {
-  let p1 = {
-    name: "apple",
-    price: 100
-  }
+
   const prod = [
     {
       "id": 1,
@@ -39,7 +36,6 @@ const ProductState = (props) => {
     cart: []
   })
   
-  // const [article, setArticle] = useState([])
 
 
 
@@ -51,18 +47,7 @@ const ProductState = (props) => {
       })
     }, 5000);
   }
-  // const fetchApi =async()=>{
-  //   try {
-  //     const response = await fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=d125d26fbc6d49728775e0b977bddc5a")
-  //     if (!response.ok){
-  //       throw new Error("response not comming")
-  //     }
-  //     const data= await response.json()
-  //     setArticle(data.articles)
-  //   } catch (error) {
-  //     throw new Error("response not comming")
-  //   }
-  // }
+
   const userProduct = async () => {
     const response = await fetch("http://localhost:5000/api/product/getuserproduct", {
         method: "GET",
